@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Activity Videos (made possible with Google Gemini)</title>
+<style>
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5;
+    color: #333;
+  }
+  h2 {
+    text-align: center;
+    color: #1a202c;
+    margin-bottom: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: separate; /* Changed for spacing */
+    border-spacing: 10px; /* Spacing between cells */
+    margin: 0 auto;
+    max-width: 1200px; /* Max width for larger screens */
+  }
+  td {
+    border: 1px solid #cbd5e0; /* Lighter border */
+    text-align: center;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 8px; /* Rounded corners for cells */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
+    vertical-align: top; /* Align content to top */
+  }
+  video {
+    width: 100%; /* Make video responsive within cell */
+    height: auto;
+    display: block; /* Remove extra space below video */
+    border-radius: 6px; /* Rounded corners for video */
+    background-color: #000; /* Background for video player area */
+  }
+  .activity-name {
+    margin-top: 8px;
+    font-weight: 600; /* Slightly bolder */
+    font-size: 0.9em;
+    color: #4a5568; /* Darker gray for text */
+  }
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    td {
+      display: block; /* Stack cells vertically on smaller screens */
+      width: 90%; /* Adjust width for stacked cells */
+      margin: 10px auto; /* Center stacked cells */
+    }
+    table, tr {
+      display: block;
+    }
+  }
+   @media (max-width: 480px) {
+    td {
+      width: 100%; /* Full width on very small screens */
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h2>Activity Videos (made possible with Google Gemini support)</h2>
+
+<table>
+  <tr>
+    <td>
+      <video class="activity-video" autoplay muted  loop>
+        <source src="./videos/eating_snacks.mov" type="video/mp4">
+        <source src="./videos/eating_snacks.webm" type="video/webm">
+        Your browser does not support the video tag or formats.
+      </video>
+      <div class="activity-name">eating_snacks</div>
+    </td>
+    <td>
+      <video class="activity-video" autoplay muted  loop>
+        <source src="./videos/throwing.mov" type="video/mp4">
+        <source src="./videos/throwing.webm" type="video/webm">
+        Your browser does not support the video tag or formats.
+      </video>
+      <div class="activity-name">throwing</div>
+    </td>
+    <td>
+      <video class="activity-video" autoplay muted  loop>
+        <source src="./videos/sitting.mov" type="video/mp4">
+        <source src="./videos/sitting.webm" type="video/webm">
+        Your browser does not support the video tag or formats.
+      </video>
+      <div class="activity-name">sitting</div>
+    </td>
+    <td>
+      <video class="activity-video" autoplay muted loop>
+        <source src="./videos/attacking.mov" type="video/mp4">
+        <source src="./videos/attacking.webm" type="video/webm">
+        Your browser does not support the video tag or formats.
+      </video>
+      <div class="activity-name">attacking</div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <video class="activity-video" autoplay muted loop>
+        <source src="./videos/walking.mov" type="video/mp4">
+        <source src="./videos/walking.webm" type="video/webm">
+        Your browser does not support the video tag or formats.
+      </video>
+      <div class="activity-name">walking</div>
+    </td>
+    <td>
+      <video class="activity-video" autoplay muted loop>
+        <source src="./videos/biting_nails.mov" type="video/mp4">
+        <source src="./videos/biting_nails.webm" type="video/webm">
+        Your browser does not support the video tag or formats.
+      </video>
+      <div class="activity-name">biting_nails</div>
+    </td>
+    <td>
+      <video class="activity-video" autoplay muted loop>
+        <source src="./videos/using_phone.mov" type="video/mp4">
+        <source src="./videos/using_phone.webm" type="video/webm">
+        Your browser does not support the video tag or formats.
+      </video>
+      <div class="activity-name">using_phone</div>
+    </td>
+    <td>
+      <video class="activity-video" autoplay muted  loop>
+        <source src="./videos/head_banging.mov" type="video/mp4">
+        <source src="./videos/head_banging.webm" type="video/webm">
+        Your browser does not support the video tag or formats.
+      </video>
+      <div class="activity-name">head_banging</div>
+    </td>
+  </tr>
+</table>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const videos = document.querySelectorAll('video.activity-video');
+
+  videos.forEach(video => {
+    // Ensure videos are muted for autoplay policies and playsinline for iOS
+    video.muted = true;
+    video.setAttribute('playsinline', ''); // Important for iOS
+
+    // Custom property to track playback direction: true = forward, false = backward
+    video.isPlayingForward = true; // Initial state: will play forward
+
+   
+  });
+});
+</script>
+
+</body>
+</html>
