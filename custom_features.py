@@ -1,5 +1,6 @@
 from tsfel.feature_extraction.features_utils import set_domain
 import numpy as np
+import pandas as pd
 from scipy import stats
 @set_domain("domain", "Custom")
 def Mode(signal):
